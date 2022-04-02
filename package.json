@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "defifofum-monorepo-template",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -10,9 +10,14 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "create": "lerna create",
+    "prepublish": "lerna run prepublish",
+    "publish-canary": "lerna version prerelease --preid canary --force-publish",
+    "publish-stable": "lerna version --force-publish && release && node ./scripts/release-notes.js"
   },
   "devDependencies": {
+    "lerna": "^4.0.0",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },

@@ -1,10 +1,33 @@
-# Turborepo starter
+# Turborepo + Lerna
+This is an official Yarn v1 starter turborepo plus Lerna for versioning/publishing packages.  
 
-This is an official Yarn v1 starter turborepo.
+Lerna has been added to aid in versioning and publishing packages.  
+
+## How to setup this template
+1. `npx create-turbo` (`./defifofum-monorepo-template`)
+2. `cd defifofum-monorepo-template`  
+3. `npm install --global lerna`  (If not installed)
+4. `lerna init` (Init `lerna.json`)
+
+
 
 ## What's inside?
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. 
+
+Lerna and Turborepo can be [used together](https://turborepo.org/docs/guides/migrate-from-lerna) in the same monorepo. 
+
+```
+Using with Lerna
+Turborepo and Lerna have a lot a in common, but also some key differences.
+
+tl;dr you can use Lerna and Turbo together.
+
+Use lerna symlinking (lerna bootstrap) packages, publishing and changelog generation
+Use turbo for task running and caching
+```
+
+It includes the following packages/apps:
 
 ### Apps and Packages
 
@@ -33,7 +56,7 @@ This repository is used in the `npx create-turbo` command, and selected when cho
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd defifofum-monorepo-template
 yarn run build
 ```
 
@@ -42,7 +65,7 @@ yarn run build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd defifofum-monorepo-template
 yarn run dev
 ```
 
@@ -53,7 +76,7 @@ Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo
 By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd my-turborepo
+cd defifofum-monorepo-template
 npx turbo login
 ```
 
@@ -67,6 +90,8 @@ npx turbo link
 
 ## Useful Links
 
+### Turborepo
+
 Learn more about the power of Turborepo:
 
 - [Pipelines](https://turborepo.org/docs/features/pipelines)
@@ -75,3 +100,11 @@ Learn more about the power of Turborepo:
 - [Scoped Tasks](https://turborepo.org/docs/features/scopes)
 - [Configuration Options](https://turborepo.org/docs/reference/configuration)
 - [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+
+## Lerna
+
+Learn about the useful commands Lerna offers.
+
+- [lerna.js.org](https://lerna.js.org/)
+- [Github README](https://github.com/lerna/lerna) (Explains commands)
+- [Fixed/Locked Mode](https://github.com/lerna/lerna#fixedlocked-mode-default)
