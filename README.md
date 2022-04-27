@@ -1,8 +1,12 @@
-# Turborepo + Lerna
+# Turborepo + Lerna Template
 This is an official Yarn v1 starter turborepo plus Lerna for versioning/publishing packages.  
 
 Lerna has been added to aid in versioning and publishing packages.  
 
+## TODO:
+- Setup GitHub Actions
+- Setup automatic deployments
+- Write documentation on maintaining package versions with Lerna
 ## How to setup this template
 1. `npx create-turbo` (`./defifofum-monorepo-template`)
 2. `cd defifofum-monorepo-template`  
@@ -10,6 +14,26 @@ Lerna has been added to aid in versioning and publishing packages.
 4. `lerna init` (Init `lerna.json`)
 
 
+## Configure VSCode
+This project uses prettier/eslint to format code.
+
+To have prettier automatically format on file saves:
+1. Select VS Code -> View -> Command Palette, and type: `Format Document With`
+2. Then `Configure Default Formatter`... and then choose Prettier - Code formatter.
+
+## Package Resolutions
+Package resolutions allow us to explicitly set package versions for specific packages which may be exploitable. 
+
+1. `yarn`: install packages if not installed
+2. `yarn audit`: audit packages for vulnerabilities
+3. Add module version resolutions to `resolutions` field in [package.json](./package.json)
+4. `yarn`: install new packages
+5. `yarn audit`: verify there are no more vulnerabilities
+
+## Create a new package
+If a new package is created, the package must be configured to be able to run jest tests
+1. In the new package, update the package [jest.config.js](./apps/web/jest.config.js) with the proper name
+2. Update the root [jest.config.js](./jest.config.js) to include the new package in the `roots` field
 
 ## What's inside?
 

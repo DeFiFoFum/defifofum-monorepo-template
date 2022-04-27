@@ -5,6 +5,7 @@
         "titleBar.activeForeground": "#ffffff"
     },
     "cSpell.words": [
+        "esbuild",
         "Turborepo"
     ]
 }
